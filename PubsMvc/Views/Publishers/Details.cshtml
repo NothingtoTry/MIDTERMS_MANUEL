@@ -1,0 +1,31 @@
+﻿@model PubsMvc.Models.Publisher
+
+@{
+    ViewData["Title"] = "Publisher Details";
+}
+
+<h1>Publisher Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Publisher ID</dt>
+        <dd class="col-sm-10">@Model.PubId</dd>
+
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.PubName</dd>
+
+        <dt class="col-sm-2">City</dt>
+        <dd class="col-sm-10">@Model.City</dd>
+
+        <dt class="col-sm-2">State</dt>
+        <dd class="col-sm-10">@Model.State</dd>
+
+        <dt class="col-sm-2">Country</dt>
+        <dd class="col-sm-10">@Model.Country</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.PubId" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</p>

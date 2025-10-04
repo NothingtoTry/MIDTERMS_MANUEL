@@ -1,0 +1,36 @@
+﻿@model PubsMvc.Models.Author
+
+@{
+    ViewData["Title"] = "Author Details";
+}
+
+<h2>Author Details</h2>
+
+<div>
+    <h4>@Model.AuFname @Model.AuLname</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Phone</dt>
+        <dd class="col-sm-10">@Model.Phone</dd>
+
+        <dt class="col-sm-2">Address</dt>
+        <dd class="col-sm-10">@Model.Address</dd>
+
+        <dt class="col-sm-2">City</dt>
+        <dd class="col-sm-10">@Model.City</dd>
+
+        <dt class="col-sm-2">State</dt>
+        <dd class="col-sm-10">@Model.State</dd>
+
+        <dt class="col-sm-2">Zip</dt>
+        <dd class="col-sm-10">@Model.Zip</dd>
+
+        <dt class="col-sm-2">Contract</dt>
+        <dd class="col-sm-10">@Model.Contract</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.AuId" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</p>

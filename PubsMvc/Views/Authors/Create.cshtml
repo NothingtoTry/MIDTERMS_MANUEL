@@ -1,0 +1,69 @@
+﻿@model PubsMvc.Models.Author
+
+@{
+    ViewData["Title"] = "Create Author";
+}
+
+<h2>Create New Author</h2>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="AuId" class="control-label"></label>
+        <input asp-for="AuId" class="form-control" />
+        <span asp-validation-for="AuId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuLname" class="control-label"></label>
+        <input asp-for="AuLname" class="form-control" />
+        <span asp-validation-for="AuLname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuFname" class="control-label"></label>
+        <input asp-for="AuFname" class="form-control" />
+        <span asp-validation-for="AuFname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="State" class="control-label"></label>
+        <input asp-for="State" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Zip" class="control-label"></label>
+        <input asp-for="Zip" class="form-control" />
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="Contract" class="form-check-input" />
+        <label asp-for="Contract" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

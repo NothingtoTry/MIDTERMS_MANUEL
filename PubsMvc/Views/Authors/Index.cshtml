@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PubsMvc.Models.Author>
+
+@{
+    ViewData["Title"] = "Authors List";
+}
+
+<h2>Authors</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Author</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Contract</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AuLname</td>
+                <td>@item.AuFname</td>
+                <td>@item.Phone</td>
+                <td>@item.City</td>
+                <td>@item.State</td>
+                <td>@item.Contract</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.AuId" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.AuId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.AuId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

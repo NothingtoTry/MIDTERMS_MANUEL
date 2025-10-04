@@ -1,0 +1,45 @@
+﻿@model PubsMvc.Models.Title
+
+@{
+    ViewData["Title"] = "Create Title";
+}
+
+<h2>Create Title</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="TitleId"></label>
+        <input asp-for="TitleId" class="form-control" />
+        <span asp-validation-for="TitleId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Title1"></label>
+        <input asp-for="Title1" class="form-control" />
+        <span asp-validation-for="Title1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PubId">Publisher</label>
+        <select asp-for="PubId" asp-items="@(new SelectList(ViewBag.Publishers, "PubId", "PubName"))" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

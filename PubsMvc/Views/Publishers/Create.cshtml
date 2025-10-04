@@ -1,0 +1,45 @@
+﻿@model PubsMvc.Models.Publisher
+
+@{
+    ViewData["Title"] = "Create Publisher";
+}
+
+<h1>Create Publisher</h1>
+
+<hr />
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="PubId" class="control-label"></label>
+        <input asp-for="PubId" class="form-control" />
+        <span asp-validation-for="PubId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PubName" class="control-label"></label>
+        <input asp-for="PubName" class="form-control" />
+        <span asp-validation-for="PubName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="State" class="control-label"></label>
+        <input asp-for="State" class="form-control" />
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country" class="control-label"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
